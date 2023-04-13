@@ -8,7 +8,7 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 public class EmployeeProfileIconDropdown extends LoginFunctionality{
-	
+	Properties p = loadProperty();
 	@BeforeMethod
 	public void loginToApplication() {
 		try {
@@ -25,7 +25,6 @@ public class EmployeeProfileIconDropdown extends LoginFunctionality{
 		try {
 			Thread.sleep(2000);
 			//Getting input from properties file
-			Properties p = loadProperty();
 			String ProfileIconDropdown_locator = p.getProperty("ProfileIconDropdown_locator");
 			String ProfileIconDropdown_About_locator = p.getProperty("ProfileIconDropdown_About_locator");
 		    //ClickOn Profile Dropdown
@@ -45,7 +44,6 @@ public class EmployeeProfileIconDropdown extends LoginFunctionality{
 		try {
 			Thread.sleep(2000);
 			//Getting input from properties file
-			Properties p = loadProperty();
 			String ProfileIconDropdown_locator = p.getProperty("ProfileIconDropdown_locator");
 			String ProfileIconDropdown_Support_locator = p.getProperty("ProfileIconDropdown_Support_locator");
 		    //ClickOn Profile Dropdown
@@ -65,7 +63,6 @@ public class EmployeeProfileIconDropdown extends LoginFunctionality{
 		try {
 			Thread.sleep(2000);
 			//Getting input from properties file
-			Properties p = loadProperty();
 			String ProfileIconDropdown_locator = p.getProperty("ProfileIconDropdown_locator");
 			String ProfileIconDropdown_Logout_locator = p.getProperty("ProfileIconDropdown_Logout_locator");
 		    //ClickOn Profile Dropdown

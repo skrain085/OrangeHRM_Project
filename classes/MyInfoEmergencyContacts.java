@@ -10,7 +10,7 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 public class MyInfoEmergencyContacts extends LoginFunctionality {
-	
+	Properties p = loadProperty();
 	@BeforeMethod
 	public void loginToApplication() {
 		try {
@@ -43,7 +43,6 @@ public class MyInfoEmergencyContacts extends LoginFunctionality {
 	public void addValidAttachment() {
 		try {
 			//Getting input from properties file
-			Properties p = loadProperty();
 			String myinfo_emergencycontacts_validfile = p.getProperty("myinfo_emergencycontacts_validfile");
 			Thread.sleep(2000);
 			enterIntoMyInfoEmergencyContacts();
@@ -62,7 +61,6 @@ public class MyInfoEmergencyContacts extends LoginFunctionality {
 	public void addAttachmentWithComment() {
 		try {
 			//Getting input from properties file
-			Properties p = loadProperty();
 			String myinfo_emergencycontacts_validfile = p.getProperty("myinfo_emergencycontacts_validfile");
 			Thread.sleep(2000);
 			enterIntoMyInfoEmergencyContacts();
@@ -83,7 +81,6 @@ public class MyInfoEmergencyContacts extends LoginFunctionality {
 	public void addInvalidAttachment() {
 		try {
 			//Getting input from properties file
-			Properties p = loadProperty();
 			String myinfo_emergencycontacts_invalidfile = p.getProperty("myinfo_emergencycontacts_invalidfile");
 			Thread.sleep(2000);
 			enterIntoMyInfoEmergencyContacts();
@@ -118,7 +115,6 @@ public class MyInfoEmergencyContacts extends LoginFunctionality {
 	public void enterIntoMyInfoEmergencyContacts() {
 		try {
 			//Getting input from properties file
-			Properties p = loadProperty();
 			String myinfo_locator = p.getProperty("myinfo_locator");
 			String emergencycontacts_locator = p.getProperty("emergencycontacts_locator");
 			Thread.sleep(2000);
@@ -134,7 +130,6 @@ public class MyInfoEmergencyContacts extends LoginFunctionality {
 
 	public void downloadTheAttachment() {
 		//Getting input from properties file
-		Properties p = loadProperty();
 		String myinfo_emergencycontacts_download_locator = p.getProperty("myinfo_emergencycontacts_download_locator");
 		//Download attachment
 		driver.findElement(By.xpath(myinfo_emergencycontacts_download_locator)).click();
@@ -142,7 +137,6 @@ public class MyInfoEmergencyContacts extends LoginFunctionality {
 
 	public void enteringComment() {
 		//Getting input from properties file
-		Properties p = loadProperty();
 		String myinfo_emergencycontacts_comment_locator = p.getProperty("myinfo_emergencycontacts_comment_locator");
 		String myinfo_emergencycontacts_comment = p.getProperty("myinfo_emergencycontacts_comment");
 		//Entering Comment
@@ -151,8 +145,7 @@ public class MyInfoEmergencyContacts extends LoginFunctionality {
 
 	public void addingEmergencyContacts(){
 		try {
-			//Getting input from properties file
-			Properties p = loadProperty();	
+			//Getting input from properties file	
 			String myinfo_emergencycontacts_add_button_locator = p.getProperty("myinfo_emergencycontacts_add_button_locator");
 			String myinfo_emergencycontacts_name_locator = p.getProperty("myinfo_emergencycontacts_name_locator");
 			String myinfo_emergencycontacts_name = p.getProperty("myinfo_emergencycontacts_name");
@@ -182,7 +175,6 @@ public class MyInfoEmergencyContacts extends LoginFunctionality {
 
 	public void clickOnSaveButton() {
 		//Getting input from properties file
-		Properties p = loadProperty();
 		String myinfo_emergencycontacts_savebutton_locator = p.getProperty("myinfo_emergencycontacts_savebutton_locator");
 		//ClickOn Save button
 		driver.findElement(By.xpath(myinfo_emergencycontacts_savebutton_locator)).click();
@@ -190,7 +182,6 @@ public class MyInfoEmergencyContacts extends LoginFunctionality {
 
 	public void uploadingFile(String filename){
 		//Getting input from properties file
-		Properties p = loadProperty();
 		String autoitScript_path= p.getProperty("autoitScript_path");
 		String myinfo_emergencycontacts_attachment_add_button_locator= p.getProperty("myinfo_emergencycontacts_attachment_add_button_locator");
 		String myinfo_emergencycontacts_browse_locator= p.getProperty("myinfo_emergencycontacts_browse_locator");

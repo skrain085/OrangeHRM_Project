@@ -10,6 +10,7 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 public class MyInfoDependents extends LoginFunctionality{
+	Properties p = loadProperty();
 	@BeforeMethod
 	public void loginToApplication() {
 		try {
@@ -93,7 +94,6 @@ public class MyInfoDependents extends LoginFunctionality{
 
 	public void clickOnDeleteIcon() {
 		//Getting input from properties file
-		Properties p = loadProperty();
 		String myinfo_dependents_delete_icon_locator = p.getProperty("myinfo_dependents_delete_icon_locator");
 		String myinfo_dependents_delete_button_locator = p.getProperty("myinfo_dependents_delete_button_locator");
 		//ClcikOn Delete icon
@@ -104,7 +104,6 @@ public class MyInfoDependents extends LoginFunctionality{
 
 	public void clickOnCancelButton() {
 		//Getting input from properties file
-		Properties p = loadProperty();
 		String myinfo_dependents_cancel_button_locator = p.getProperty("myinfo_dependents_cancel_button_locator");
 		//ClickOn Cancel Button
 		driver.findElement(By.xpath(myinfo_dependents_cancel_button_locator)).click();
@@ -112,7 +111,6 @@ public class MyInfoDependents extends LoginFunctionality{
 
 	public void editingFullName() {
 		//Getting input from properties file
-		Properties p = loadProperty();
 		String myinfo_dependents_edit_fullname_locator = p.getProperty("myinfo_dependents_edit_fullname_locator");
 		String myinfo_dependents_fullname = p.getProperty("myinfo_dependents_fullname");
 		//Editing Full Name
@@ -122,7 +120,6 @@ public class MyInfoDependents extends LoginFunctionality{
 
 	public void clickOnEditIcon() {
 		//Getting input from properties file
-		Properties p = loadProperty();
 		String myinfo_dependents_edit_icon_locator = p.getProperty("myinfo_dependents_edit_icon_locator");
 		//ClickOn edit icon
 		driver.findElement(By.xpath(myinfo_dependents_edit_icon_locator)).click();
@@ -132,7 +129,6 @@ public class MyInfoDependents extends LoginFunctionality{
 	public void enterIntoMyInfoDependents() {
 		try {
 			//Getting input from properties file
-			Properties p = loadProperty();
 			String myinfo_locator = p.getProperty("myinfo_locator");
 			String dependents_locator = p.getProperty("dependents_locator");
 			//Click On MyInfo
@@ -146,7 +142,6 @@ public class MyInfoDependents extends LoginFunctionality{
 	}
 	public void clickOnAddButton() {
 		//Getting input from properties file
-		Properties p = loadProperty();
 		String myinfo_dependents_add_button_locator = p.getProperty("myinfo_dependents_add_button_locator");
 		//Click On +Add
 		driver.findElement(By.xpath(myinfo_dependents_add_button_locator)).click();
@@ -155,7 +150,6 @@ public class MyInfoDependents extends LoginFunctionality{
 	public void enteringName(){
 		try {
 			//Getting input from properties file
-			Properties p = loadProperty();
 			String myinfo_dependents_name_locator = p.getProperty("myinfo_dependents_name_locator");
 			String myinfo_dependents_name = p.getProperty("myinfo_dependents_name");
 			//Entering Name
@@ -169,7 +163,6 @@ public class MyInfoDependents extends LoginFunctionality{
 	public void selectRelationship(){
 		try {
 			//Getting input from properties file
-			Properties p = loadProperty();
 			String myinfo_dependents_relationship_locator = p.getProperty("myinfo_dependents_relationship_locator");
 			String myinfo_dependents_relationshiplist_locator = p.getProperty("myinfo_dependents_relationshiplist_locator");
 			String myinfo_dependents_relationship = p.getProperty("myinfo_dependents_relationship");
@@ -191,7 +184,6 @@ public class MyInfoDependents extends LoginFunctionality{
 
 	public void selectDateOfBirth() {
 		//Getting input from properties file
-		Properties p = loadProperty();
 		String myinfo_dependents_dateofbirth_locator = p.getProperty("myinfo_dependents_dateofbirth_locator");
 		String myinfo_dependents_year_locator = p.getProperty("myinfo_dependents_year_locator");
 		String myinfo_dependents_yearlist_locator = p.getProperty("myinfo_dependents_yearlist_locator");
@@ -222,8 +214,6 @@ public class MyInfoDependents extends LoginFunctionality{
 	}
 
 	public void clickOnSaveButton() {
-		//Getting input from properties file
-		Properties p = loadProperty();
 		String myinfo_dependents_save_button_locator = p.getProperty("myinfo_dependents_save_button_locator");
 		//ClickOn Save Button
 		driver.findElement(By.xpath(myinfo_dependents_save_button_locator)).click();

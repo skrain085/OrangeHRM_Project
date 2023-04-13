@@ -8,7 +8,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 public class LoginFunctionality {
 	public static WebDriver driver;
-
+	Properties p = loadProperty();
 	public Properties loadProperty(){
 		try {
 			//Making Connection with input.properties file
@@ -29,7 +29,6 @@ public class LoginFunctionality {
 			driver.manage().window().maximize();
 			driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 			//Getting input from properties file
-			Properties p = loadProperty();
 			String urlLink = p.getProperty("login_url");
 			//Launch the Application using URL
 			driver.get(urlLink);
@@ -42,7 +41,6 @@ public class LoginFunctionality {
 	void loginFunction() {
 		try {
 			//Getting input from properties file
-			Properties p = loadProperty();
 			String username = p.getProperty("login_username");
 			String password = p.getProperty("login_password");
 			String username_locator = p.getProperty("login_username_locator");

@@ -8,7 +8,7 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 public class DirectoryFunctionality extends LoginFunctionality{
-	
+	Properties p = loadProperty();
 	@BeforeMethod
 	public void loginToApplication() {
 		try {
@@ -23,7 +23,6 @@ public class DirectoryFunctionality extends LoginFunctionality{
 	@Test
 	public void searchEmployeeByEmployeeName() {
 		//Getting input from properties file
-		Properties p = loadProperty();
 		String employee_name = p.getProperty("directory_employee_name");
 		
 		searchEmployee(employee_name,null,null);
@@ -32,7 +31,6 @@ public class DirectoryFunctionality extends LoginFunctionality{
 	@Test(priority=1)
 	public void searchEmployeeByEmployeeNameAndValidJobTitle() {
 		//Getting input from properties file
-		Properties p = loadProperty();
 		String employee_name = p.getProperty("directory_employee_name");  
 		String valid_jobtitle = p.getProperty("directory_valid_jobtitle");  
 		
@@ -42,7 +40,6 @@ public class DirectoryFunctionality extends LoginFunctionality{
 	@Test(priority=2)
 	public void searchEmployeeByEmployeeNameAndInvalidJobTitle() {
 		//Getting input from properties file
-		Properties p = loadProperty();
 		String employee_name = p.getProperty("directory_employee_name");  
 		String invalid_jobtitle = p.getProperty("directory_invalid_jobtitle"); 
 		
@@ -52,7 +49,6 @@ public class DirectoryFunctionality extends LoginFunctionality{
 	@Test(priority=3)
 	public void searchEmployeeByEmployeeName_ValidJobTitleAndValidLocation() {
 		//Getting input from properties file
-		Properties p = loadProperty();
 		String employee_name = p.getProperty("directory_employee_name");  
 		String valid_jobtitle = p.getProperty("directory_valid_jobtitle"); 
 		String valid_location = p.getProperty("directory_valid_location");
@@ -63,7 +59,6 @@ public class DirectoryFunctionality extends LoginFunctionality{
 	@Test(priority=4)
 	public void searchEmployeeByEmployeeName_InvalidJobTitleAndValidLocation() {
 		//Getting input from properties file
-		Properties p = loadProperty();
 		String employee_name = p.getProperty("directory_employee_name");  
 		String invalid_jobtitle = p.getProperty("directory_invalid_jobtitle");
 		String valid_location = p.getProperty("directory_valid_location");
@@ -74,7 +69,6 @@ public class DirectoryFunctionality extends LoginFunctionality{
 	@Test(priority=5)
 	public void searchEmployeeByEmployeeName_ValidJobTitleAndInvalidLocation() {
 		//Getting input from properties file
-		Properties p = loadProperty();
 		String employee_name = p.getProperty("directory_employee_name");
 		String valid_jobtitle = p.getProperty("directory_valid_jobtitle");
 		String invalid_location = p.getProperty("directory_invalid_location");
@@ -85,7 +79,6 @@ public class DirectoryFunctionality extends LoginFunctionality{
 	@Test(priority=6)
 	public void searchEmployeeByEmployeeName_InvalidJobTitleAndInvalidLocation() {
 		//Getting input from properties file
-		Properties p = loadProperty();
 		String employee_name = p.getProperty("directory_employee_name");
 		String invalid_jobtitle = p.getProperty("directory_invalid_jobtitle");
 		String invalid_location = p.getProperty("directory_invalid_location");
@@ -96,7 +89,6 @@ public class DirectoryFunctionality extends LoginFunctionality{
 	@Test(priority=7)
 	public void searchEmployeeByJobTitle() {
 		//Getting input from properties file
-		Properties p = loadProperty();
 		String invalid_jobtitle = p.getProperty("directory_invalid_jobtitle");
 		
 		searchEmployee(null,invalid_jobtitle, null);
@@ -105,7 +97,6 @@ public class DirectoryFunctionality extends LoginFunctionality{
 	@Test(priority=8)
 	public void searchEmployeeByLocation() {
 		//Getting input from properties file
-		Properties p = loadProperty();
 		String invalid_location = p.getProperty("directory_invalid_location");
 		
 		searchEmployee(null,null,invalid_location);
@@ -115,7 +106,6 @@ public class DirectoryFunctionality extends LoginFunctionality{
 	public void clickOnHideIcon() {
 		try {
 			//Getting input from properties file
-			Properties p = loadProperty();
 			String hide_icon_button_locator = p.getProperty("directory_hide_icon_button_locator");
 			Thread.sleep(2000);
 			clickOnDirectory();
@@ -130,7 +120,6 @@ public class DirectoryFunctionality extends LoginFunctionality{
 	public void resetTheSelectedValues() {
 		try {
 		    //Getting input from properties file
-			Properties p = loadProperty();
 			String invalid_jobtitle = p.getProperty("directory_invalid_jobtitle");
 			String reset_button_locator = p.getProperty("directory_reset_button_locator");
 			searchEmployee(null,invalid_jobtitle, null);
@@ -146,7 +135,6 @@ public class DirectoryFunctionality extends LoginFunctionality{
 	public void viewEmployeeInfo() {
 		try {
 			//Getting input from properties file
-			Properties p = loadProperty();
 			String image_locator = p.getProperty("directory_image_locator");
 			Thread.sleep(2000);
 			clickOnDirectory();
@@ -236,7 +224,6 @@ public class DirectoryFunctionality extends LoginFunctionality{
 
 	public void clickOnDirectory(){
 		//Getting input from properties file
-		Properties p = loadProperty();
 		String directory_locator = p.getProperty("directory_locator");
 		//ClickOn Directory
 		driver.findElement(By.xpath(directory_locator)).click();
@@ -244,7 +231,6 @@ public class DirectoryFunctionality extends LoginFunctionality{
 	
 	public void selectEmployeeName(String name) {
 		//Getting input from properties file
-		Properties p = loadProperty();
 		String employeename_locator = p.getProperty("directory_employeename_locator");
 		String employeename_list_locator = p.getProperty("directory_employeename_list_locator");
 		//Select Employee Name
@@ -263,7 +249,6 @@ public class DirectoryFunctionality extends LoginFunctionality{
 	
 	public void clickOnSearchButton() {
 		//Getting input from properties file
-		Properties p = loadProperty();
 		String search_button_locator = p.getProperty("directory_search_button_locator");
 		//ClickOn Search Button
 		driver.findElement(By.xpath(search_button_locator)).click();
@@ -271,7 +256,6 @@ public class DirectoryFunctionality extends LoginFunctionality{
 	
 	public void selectJobTitle(String job_title) {
 		//Getting input from properties file
-		Properties p = loadProperty();
 		String jobtitle_locator = p.getProperty("directory_jobtitle_locator");
 		String jobtitle_list_locator = p.getProperty("directory_jobtitle_list_locator");
 	    //Select JobTitle
@@ -288,7 +272,6 @@ public class DirectoryFunctionality extends LoginFunctionality{
 	
 	public void selectLocation(String location) {
 		//Getting input from properties file
-		Properties p = loadProperty();
 		String location_locator = p.getProperty("directory_location_locator");
 		String location_list_locator = p.getProperty("directory_location_list_locator");
 		//Select Location
